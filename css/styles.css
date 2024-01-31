@@ -34,6 +34,12 @@ body {
     margin: 0 10px;
 }
 
+#resultsBody tr td button {
+    margin-left: 12px;
+    margin-top:6px;
+  
+}
+
 
 /* #resultsTable {
     width: 100%;
@@ -54,10 +60,30 @@ body {
 
 .headers {
     display: flex;
-    flex-direction: column;
-    align-items: start;
+    flex-direction: row;
+    justify-content: flex-end;
     margin-bottom: 20px;
 }
+
+.container_admin {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.container_admin > h1,p{
+    display: flex;
+    justify-content: center;
+}
+#results_admin{
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+}
+
 
 label {
     margin-bottom: 5px;
@@ -68,18 +94,22 @@ label {
     margin-bottom: 10px;
 }
 
-.btn-primary {
+
+
+/* #agregar {
     background-color: #007bff;
     color: #fff;
-    border: none;
+    border: 1px  red;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-}
+    display: flex;
+    justify-content: flex-end;
+} */
 
-.btn-primary:hover {
+/* #agregar:hover {
     background-color: #0056b3;
-}
+} */
 
 /* ----------------------CardEdit (thanks)-------------------- */
 

@@ -37,16 +37,59 @@ function displayResultsPlace() {
         placeCell.textContent = place.place;
 
         // Botón para redirigir a la página de reacciones con el id del lugar
-        const goToReact = document.createElement('a');
+        const goToReact = document.createElement('button');
         goToReact.innerHTML = 'Reaccionar';
-        goToReact.href = `index.html?id=${place.id}`;
+        goToReact.classList.add('btn', 'btn-outline-primary', 'btn-sm');
+        goToReact.addEventListener('click', function() {
+            window.location.href = `index.html?id=${place.id}`;
+        });
         actionsCell.appendChild(goToReact);
 
-        // Botón para redirigir a la página de reacciones con el id del lugar
-        const goToDetails = document.createElement('a');
+        // Botón para redirigir a la página de ver-reacciones con el id del lugar
+
+        const goToDetails = document.createElement('button');
         goToDetails.innerHTML = 'Ver registros';
-        goToDetails.href = `see-reactions.html?id=${place.id}`;
+        goToDetails.classList.add('btn', 'btn-outline-primary', 'btn-sm');
+        goToDetails.addEventListener('click', function() {
+            window.location.href = `see-reactions.html?id=${place.id}`;
+        });
         actionsCell.appendChild(goToDetails);
+
+        //Botón para eliminar
+        // const deleteCell = document.createElement('button');
+        // deleteCell.innerHTML = 'Eliminar';
+        // deleteCell.classList.add('btn', 'btn-danger', 'btn-sm');
+
+        // deleteCell.addEventListener('click', function(){
+
+        //     const places = JSON.parse(localStorage.getItem('places')) || [];
+
+
+        //     const deleteRow = deleteCell.parentNode.parentNode;
+        //     const reactions = JSON.parse(localStorage.getItem('reactions')) || [];
+        //     console.log(reactions)
+
+        //     // if(deleteRow){
+        //     //     deleteRow.remove();
+        //     //     reactions.remove();
+        //     // }
+        // })
+
+        // actionsCell.appendChild(deleteCell);
+
+        // Botón para redirigir a la página de reacciones con el id del lugar
+
+        // const goToReact = document.createElement('a');
+        // // goToReact.inputMode= 'a';
+        // goToReact.innerHTML = 'Reaccionar';
+        // goToReact.href = `index.html?id=${place.id}`;
+        // actionsCell.appendChild(goToReact);
+
+        // // Botón para redirigir a la página de reacciones con el id del lugar
+        // const goToDetails = document.createElement('a');
+        // goToDetails.innerHTML = 'Ver registros';
+        // goToDetails.href = `see-reactions.html?id=${place.id}`;
+        // actionsCell.appendChild(goToDetails);
     });
 }
 

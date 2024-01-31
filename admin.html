@@ -9,16 +9,20 @@
     <title>Calificador de Páginas</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container_admin">
         <h1>Registre Un Lugar</h1>
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Lugar:</label>
             <input type="text" id="placeInput"  class="form-control" placeholder="Ingresa el lugar">
         </div>
-        <button onclick="addPlace()" class="btn btn-primary mb-3">Agregar</button>
 
-        <div id="results">
+        <div class="headers">
+            <button id="agregar" onclick="addPlace()" class="btn btn-outline-primary mb-3 ">Agregar</button>
+        </div>
+
+
+        <div id="results_admin">
             <h2>Lista de Lugares</h2>
             <table class="table" id="resultsTable">
                 <thead>
