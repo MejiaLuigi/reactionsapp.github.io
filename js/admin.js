@@ -56,40 +56,28 @@ function displayResultsPlace() {
         actionsCell.appendChild(goToDetails);
 
         //Botón para eliminar
-        // const deleteCell = document.createElement('button');
-        // deleteCell.innerHTML = 'Eliminar';
-        // deleteCell.classList.add('btn', 'btn-danger', 'btn-sm');
+        const deleteCell = document.createElement('button');
+        deleteCell.innerHTML = 'Eliminar';
+        deleteCell.classList.add('btn', 'btn-danger', 'btn-sm');
 
-        // deleteCell.addEventListener('click', function(){
+        deleteCell.addEventListener('click', function( ){
+            const deleteRow = deleteCell.parentNode.parentNode;
+            const places = JSON.parse(localStorage.getItem('places')) || [];
+            const placesFound = places.filter((places => places.id !== place.id));
 
-        //     const places = JSON.parse(localStorage.getItem('places')) || [];
+            localStorage.setItem('places', JSON.stringify(placesFound));
 
+            const reactions = JSON.parse(localStorage.getItem('reactions')) || [];
+            
 
-        //     const deleteRow = deleteCell.parentNode.parentNode;
-        //     const reactions = JSON.parse(localStorage.getItem('reactions')) || [];
-        //     console.log(reactions)
+            const reactionsFound = reactions.filter(reaction => reaction.idPlace !== place.id);
 
-        //     // if(deleteRow){
-        //     //     deleteRow.remove();
-        //     //     reactions.remove();
-        //     // }
-        // })
+            localStorage.setItem('reactions', JSON.stringify(reactionsFound));
+            deleteRow.remove();
+        })
 
-        // actionsCell.appendChild(deleteCell);
+        actionsCell.appendChild(deleteCell);
 
-        // Botón para redirigir a la página de reacciones con el id del lugar
-
-        // const goToReact = document.createElement('a');
-        // // goToReact.inputMode= 'a';
-        // goToReact.innerHTML = 'Reaccionar';
-        // goToReact.href = `index.html?id=${place.id}`;
-        // actionsCell.appendChild(goToReact);
-
-        // // Botón para redirigir a la página de reacciones con el id del lugar
-        // const goToDetails = document.createElement('a');
-        // goToDetails.innerHTML = 'Ver registros';
-        // goToDetails.href = `see-reactions.html?id=${place.id}`;
-        // actionsCell.appendChild(goToDetails);
     });
 }
 
